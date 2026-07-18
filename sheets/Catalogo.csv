@@ -1,0 +1,4 @@
+Clave,Marca,Pais,Region_Code,Denominaciones,Imagen,Entrega,Stock,Estado,Orden_Subida,URL_Publicada,Motivo
+google-play|PE,Google Play,Perú,PE,33|34|1|10;66|68|1|20;165|170|1|50,/img/cards/google-play-pe.webp,5 a 30 minutos,si,pendiente,1,,
+netflix|PE,Netflix,Perú,PE,50|51|1|15;100|102|1|30;165|170|1|50,/img/cards/netflix-pe.webp,5 a 30 minutos,si,pendiente,2,,
+spotify|PE,Spotify,Perú,PE,50|51|1|15;100|102|1|30;165|170|1|50,/img/cards/spotify-pe.webp,5 a 30 minutos,si,pendiente,3,,

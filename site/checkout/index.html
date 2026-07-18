@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Checkout — Tukicards</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <style>
+    .co { max-width: 760px; margin: 0 auto; padding: 40px 22px 70px; }
+    .co-back { font-family: var(--font-mono); font-size: .82rem; color: var(--muted); }
+    .co-back:hover { color: var(--stamp); }
+    .co-prod {
+      display: grid; grid-template-columns: 140px 1fr; gap: 18px; align-items: center;
+      background: var(--card); border: 1px solid var(--line-2); border-radius: var(--radius);
+      padding: 18px; margin: 18px 0 28px;
+    }
+    .co-prod img { width: 140px; height: 88px; object-fit: cover; border-radius: var(--radius-sm); border: 1px solid var(--line); }
+    .co-prod h1 { font-size: 1.3rem; margin-bottom: 6px; }
+    .co-price { font-family: var(--font-num); font-variant-numeric: tabular-nums; }
+    .co-price .usd { font-size: 1.4rem; font-weight: 800; color: var(--value); }
+    .co-price .loc { color: var(--muted); font-size: .9rem; font-family: var(--font-body); }
+    .co-step { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 22px; margin-bottom: 18px; }
+    .co-step h2 { font-size: 1.1rem; display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+    .co-step .badge { width: 26px; height: 26px; border-radius: 50%; background: var(--ink); color: #fff; display: grid; place-items: center; font-family: var(--font-num); font-weight: 700; font-size: .8rem; }
+    .co-amazon-btn { margin-top: 14px; }
+    .co-tiers { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+    .co-tier {
+      font-family: var(--font-num); font-weight: 700; font-size: .9rem;
+      padding: 9px 14px; border-radius: var(--radius-sm); border: 1.5px solid var(--line-2);
+      background: #fff; color: var(--ink-2); cursor: pointer; text-decoration: none;
+    }
+    .co-tier:hover { border-color: var(--stamp); color: var(--stamp); }
+    .co-tier.sel { background: var(--stamp); border-color: var(--stamp); color: #fff; }
+    .co-toggle { background: none; border: none; color: var(--stamp); font-size: .86rem; cursor: pointer; margin-top: 12px; padding: 0; text-decoration: underline; }
+    .co-field { margin-bottom: 14px; }
+    .co-field label { display: block; font-size: .86rem; font-weight: 600; margin-bottom: 6px; }
+    .co-field input {
+      width: 100%; padding: 12px 14px; border: 1px solid var(--line-2);
+      border-radius: var(--radius-sm); font-size: 1rem; font-family: var(--font-body);
+    }
+    .co-field input:focus { outline: 3px solid var(--stamp); outline-offset: 1px; }
+    .co-field .hint { font-size: .78rem; color: var(--muted); margin-top: 5px; }
+    .co-ok { text-align: center; padding: 30px 20px; }
+    .co-ok .check { width: 56px; height: 56px; border-radius: 50%; background: var(--value-soft); color: var(--value); display: grid; place-items: center; font-size: 1.8rem; margin: 0 auto 14px; }
+    .co-note { font-size: .82rem; color: var(--muted); margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <nav class="nav"><a href="/" class="logo"><span class="mark">T</span>Tukicards</a></nav>
+    </div>
+  </header>
+
+  <main class="co">
+    <a class="co-back" href="/" id="co-back">&larr; Volver</a>
+
+    <!-- Producto -->
+    <div class="co-prod">
+      <img id="co-img" src="/img/placeholder-card.svg" alt="Gift card" />
+      <div>
+        <h1 id="co-title">Gift card</h1>
+        <div class="co-price">
+          <span class="usd" id="co-usd">—</span>
+          <div class="loc" id="co-loc"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="co-flow">
+      <!-- Paso 1 -->
+      <section class="co-step">
+        <h2><span class="badge">1</span> Comprá la tarjeta de Amazon</h2>
+        <p class="muted" style="font-size:.94rem">El pago se hace con una gift card de Amazon (USD). Comprá el monto indicado en G2A, te llega el código al instante, y en el paso 2 lo pegás acá.</p>
+        <a class="btn btn-primary btn-lg co-amazon-btn" id="co-amazon" href="#" target="_blank" rel="noopener">Comprar tarjeta Amazon de USD <span id="co-amazon-usd">10</span> en G2A</a>
+        <button class="co-toggle" id="co-toggle" type="button">Ver otros montos</button>
+        <div class="co-tiers" id="co-tiers" hidden></div>
+      </section>
+
+      <!-- Paso 2 -->
+      <section class="co-step">
+        <h2><span class="badge">2</span> Pegá el código y tus datos</h2>
+        <form id="coForm">
+          <div class="co-field">
+            <label for="f-nombre">Tu nombre</label>
+            <input type="text" id="f-nombre" name="nombre" required autocomplete="name" />
+          </div>
+          <div class="co-field">
+            <label for="f-email">Tu email (te mandamos el código acá)</label>
+            <input type="email" id="f-email" name="email" required autocomplete="email" />
+          </div>
+          <div class="co-field">
+            <label for="f-codigo">Código de la tarjeta de Amazon</label>
+            <input type="text" id="f-codigo" name="codigo" required autocomplete="off" placeholder="XXXX-XXXXXX-XXXX" />
+            <p class="hint">Es el código que te dio G2A al comprar la tarjeta de Amazon.</p>
+          </div>
+          <button class="btn btn-primary btn-block btn-lg" type="submit" id="co-submit">Enviar mi pedido</button>
+          <p class="co-note">Al enviar, verificamos el saldo del código y te mandamos tu gift card por mail en 5 a 30 minutos.</p>
+        </form>
+      </section>
+    </div>
+
+    <!-- Éxito -->
+    <section class="co-step co-ok" id="coOk" hidden>
+      <div class="check">&#10003;</div>
+      <h2 style="justify-content:center">¡Listo! Recibimos tu pedido</h2>
+      <p class="muted">Estamos verificando el código de Amazon. Te mandamos tu gift card al mail que dejaste, entre 5 y 30 minutos.</p>
+      <p class="co-note">¿Alguna duda? Escribinos a <a href="mailto:contacto@tukicards.com">contacto@tukicards.com</a></p>
+    </section>
+  </main>
+
+  <script>
+    // ==============================================================
+    //  MISMO Apps Script que comprarjuegos: los pedidos caen en la
+    //  misma hoja de Google Sheets. Si querés una hoja aparte para
+    //  tukicards, creá un Apps Script nuevo y pegá su URL /exec acá.
+    // ==============================================================
+    const APPSCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxeksTHb0oB7k9C1vdVQaOrBoOxO9wfPU602X-D06ZvotjUWdhlLoUbLzdqGFWDkFpxAQ/exec';
+
+    // Links de tarjetas Amazon en G2A, por monto USD (los mismos de comprarjuegos).
+    const G2A = {
+      10: 'https://www.g2a.com/es/amazon-gift-card-10-usd-amazon-key-united-states-i10000001698108?suid=dfe59a4d-ee9f-4361-8003-016377764387',
+      15: 'https://www.g2a.com/es/amazon-gift-card-15-usd-amazon-key-united-states-i10000001698252?suid=862663b5-832b-472b-9eec-c7160d53a4ed',
+      20: 'https://www.g2a.com/es/amazon-gift-card-20-usd-amazon-key-united-states-i10000001698003?suid=74325c37-05fc-42b6-ab31-d586650025b9',
+      25: 'https://www.g2a.com/es/amazon-gift-card-25-usd-amazon-key-united-states-i10000178883011?suid=276f0e94-1fa4-424b-b9e1-3db01a1ecff1',
+      30: 'https://www.g2a.com/es/amazon-gift-card-30-usd-amazon-key-united-states-i10000001698052?suid=8ead99f0-247a-4888-8b3b-8a320d5acee2',
+      35: 'https://www.g2a.com/es/amazon-gift-card-35-usd-amazon-key-united-states-i10000001698204?suid=c72ecdf9-e826-4c26-a9f0-348d1f5c6c52',
+      50: 'https://www.g2a.com/es/amazon-gift-card-50-usd-amazon-key-united-states-i10000001698084?suid=002e03e2-47ba-4d0a-b71c-becd1ce85916',
+    };
+    const TIERS = [10, 15, 20, 25, 30, 35, 50];
+
+    const qs = new URLSearchParams(location.search);
+    const p = (k) => (qs.get(k) || '').trim();
+
+    const marca = p('marca'), pais = p('pais'), iso = p('iso');
+    const sim = p('sim'), moneda = p('moneda');
+    const nominal = p('nominal'), precioLocal = p('precio');
+    const img = p('img');
+    let usd = parseInt(p('usd'), 10);
+    if (!TIERS.includes(usd)) {
+      usd = TIERS[0];
+    }
+
+    const titulo = (marca ? marca + ' Gift Card' : 'Gift card') + (pais ? ' ' + pais : '');
+    document.getElementById('co-title').textContent = titulo;
+    document.title = 'Checkout · ' + titulo + ' — Tukicards';
+
+    if (img) document.getElementById('co-img').src = img;
+    document.getElementById('co-img').alt = titulo;
+
+    document.getElementById('co-usd').textContent = 'USD ' + usd;
+    if (nominal && sim) {
+      const locTxt = 'Denominación: ' + sim + Number(nominal).toLocaleString('es') +
+        (precioLocal ? ' · Precio de lista: ' + sim + Number(precioLocal).toLocaleString('es') + (moneda ? ' ' + moneda : '') : '');
+      document.getElementById('co-loc').textContent = locTxt;
+    }
+
+    const amazonBtn = document.getElementById('co-amazon');
+    const amazonUsd = document.getElementById('co-amazon-usd');
+    function setTier(v) {
+      usd = v;
+      amazonBtn.href = G2A[v];
+      amazonUsd.textContent = v;
+      document.getElementById('co-usd').textContent = 'USD ' + v;
+      document.querySelectorAll('.co-tier').forEach((t) => t.classList.toggle('sel', Number(t.dataset.usd) === v));
+    }
+
+    const tiersBox = document.getElementById('co-tiers');
+    TIERS.forEach((v) => {
+      const a = document.createElement('a');
+      a.className = 'co-tier' + (v === usd ? ' sel' : '');
+      a.href = G2A[v];
+      a.target = '_blank'; a.rel = 'noopener';
+      a.dataset.usd = v;
+      a.textContent = 'USD ' + v;
+      a.addEventListener('click', () => setTier(v));
+      tiersBox.appendChild(a);
+    });
+    setTier(usd);
+
+    document.getElementById('co-toggle').addEventListener('click', () => {
+      const hidden = tiersBox.hasAttribute('hidden');
+      if (hidden) tiersBox.removeAttribute('hidden'); else tiersBox.setAttribute('hidden', '');
+      document.getElementById('co-toggle').textContent = hidden ? 'Ocultar montos' : 'Ver otros montos';
+    });
+
+    if (document.referrer) document.getElementById('co-back').href = document.referrer;
+
+    document.getElementById('coForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('co-submit');
+      btn.disabled = true; btn.textContent = 'Enviando…';
+      const f = e.target;
+      const data = {
+        juego: titulo + ' — ' + (sim || '') + (nominal ? Number(nominal).toLocaleString('es') : '') + ' (' + (iso || '') + ')',
+        precio: 'USD ' + usd + (precioLocal ? ' / ' + (sim || '') + Number(precioLocal).toLocaleString('es') + ' ' + (moneda || '') : ''),
+        nombre: f.nombre.value,
+        email: f.email.value,
+        codigo: f.codigo.value,
+      };
+      try {
+        await fetch(APPSCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+        document.getElementById('co-flow').style.display = 'none';
+        document.querySelector('.co-prod').style.display = 'none';
+        document.getElementById('coOk').hidden = false;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (err) {
+        alert('Hubo un problema al enviar. Revisá tu conexión e intentá de nuevo.');
+        btn.disabled = false; btn.textContent = 'Enviar mi pedido';
+      }
+    });
+  </script>
+</body>
+</html>

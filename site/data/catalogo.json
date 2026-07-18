@@ -1,0 +1,32 @@
+[
+  {
+    "marca": "google-play",
+    "marca_nombre": "Google Play",
+    "pais": "PE",
+    "pais_nombre": "Perú",
+    "moneda": "PEN",
+    "url": "/pe/google-play-gift-card/",
+    "precio_desde": 34,
+    "denom_min": 33
+  },
+  {
+    "marca": "netflix",
+    "marca_nombre": "Netflix",
+    "pais": "PE",
+    "pais_nombre": "Perú",
+    "moneda": "PEN",
+    "url": "/pe/netflix-gift-card/",
+    "precio_desde": 51,
+    "denom_min": 50
+  },
+  {
+    "marca": "spotify",
+    "marca_nombre": "Spotify",
+    "pais": "PE",
+    "pais_nombre": "Perú",
+    "moneda": "PEN",
+    "url": "/pe/spotify-gift-card/",
+    "precio_desde": 51,
+    "denom_min": 50
+  }
+]

@@ -1,0 +1,104 @@
+<svg viewBox="0 0 560 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gift cards digitales de varios países de América Latina">
+  <defs>
+    <filter id="soft" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#12151A" flood-opacity="0.22"/>
+    </filter>
+    <filter id="chipShadow" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#12151A" flood-opacity="0.18"/>
+    </filter>
+
+    <linearGradient id="gNetflix" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F41321"/><stop offset="1" stop-color="#8B0007"/>
+    </linearGradient>
+    <linearGradient id="gSpotify" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2FE072"/><stop offset="1" stop-color="#0C7A34"/>
+    </linearGradient>
+    <linearGradient id="gDisney" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3E6BFF"/><stop offset="1" stop-color="#0C1E5B"/>
+    </linearGradient>
+    <linearGradient id="gPrime" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#33C6F4"/><stop offset="1" stop-color="#0A6E8C"/>
+    </linearGradient>
+    <linearGradient id="gPlay" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12C48B"/><stop offset="1" stop-color="#01875F"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#1B3FCC" stop-opacity=".28"/><stop offset="1" stop-color="#1B3FCC" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#F4B400" stop-opacity=".22"/><stop offset="1" stop-color="#F4B400" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="perf" width="14" height="4" patternUnits="userSpaceOnUse">
+      <rect width="7" height="1.6" y="1.2" fill="#ffffff" opacity="0.6"/>
+    </pattern>
+  </defs>
+
+  <!-- Fondo con vida: blobs de color difuminados -->
+  <circle cx="120" cy="120" r="150" fill="url(#glow1)" filter="url(#soft)"/>
+  <circle cx="440" cy="400" r="170" fill="url(#glow2)" filter="url(#soft)"/>
+
+  <!-- Anillo decorativo -->
+  <circle cx="280" cy="264" r="205" fill="none" stroke="#1B3FCC" stroke-opacity=".08" stroke-width="2" stroke-dasharray="1 10" stroke-linecap="round"/>
+
+  <!-- Card 4 (fondo): Google Play -->
+  <g transform="rotate(-20 280 280)" filter="url(#cardShadow)">
+    <rect x="90" y="176" width="300" height="188" rx="20" fill="url(#gPlay)"/>
+    <rect x="90" y="232" width="300" height="4" fill="url(#perf)"/>
+    <text x="112" y="214" font-family="Archivo, sans-serif" font-weight="800" font-size="19" fill="#fff">Google Play</text>
+    <text x="112" y="342" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="14" fill="#fff" opacity="0.92">Saldo · S/ 50</text>
+    <circle cx="358" cy="214" r="12" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- Card 3 : Disney+ -->
+  <g transform="rotate(-9 280 280)" filter="url(#cardShadow)">
+    <rect x="112" y="152" width="300" height="188" rx="20" fill="url(#gDisney)"/>
+    <rect x="112" y="208" width="300" height="4" fill="url(#perf)"/>
+    <text x="134" y="190" font-family="Archivo, sans-serif" font-weight="800" font-size="20" fill="#fff">Disney+</text>
+    <text x="134" y="318" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="14" fill="#fff" opacity="0.92">CL · $ 12.000</text>
+    <circle cx="380" cy="190" r="12" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- Card 2 : Spotify -->
+  <g transform="rotate(6 280 280)" filter="url(#cardShadow)">
+    <rect x="130" y="140" width="300" height="188" rx="20" fill="url(#gSpotify)"/>
+    <rect x="130" y="196" width="300" height="4" fill="url(#perf)"/>
+    <text x="152" y="178" font-family="Archivo, sans-serif" font-weight="800" font-size="20" fill="#fff">Spotify</text>
+    <text x="152" y="306" font-family="Plus Jakarta Sans, sans-serif" font-weight="600" font-size="14" fill="#fff" opacity="0.92">MX · $ 200</text>
+    <circle cx="398" cy="178" r="12" fill="#fff" opacity="0.9"/>
+  </g>
+
+  <!-- Card 1 (frente) : Netflix -->
+  <g transform="rotate(18 280 280)" filter="url(#cardShadow)">
+    <rect x="150" y="132" width="300" height="188" rx="20" fill="url(#gNetflix)"/>
+    <rect x="150" y="188" width="300" height="4" fill="url(#perf)"/>
+    <path d="M150 132 L450 132 L450 320 L150 320 Z" fill="#fff" opacity="0.05"/>
+    <text x="172" y="170" font-family="Archivo, sans-serif" font-weight="800" font-size="23" fill="#fff">Netflix</text>
+    <text x="172" y="298" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="15" fill="#fff">AR · $ 10.000</text>
+    <circle cx="418" cy="170" r="14" fill="#fff" opacity="0.95"/>
+    <text x="418" y="176" font-family="Archivo, sans-serif" font-weight="800" font-size="15" fill="#E50914" text-anchor="middle">T</text>
+  </g>
+
+  <!-- Chips flotantes: entrega y seguridad -->
+  <g filter="url(#chipShadow)">
+    <rect x="18" y="378" width="150" height="42" rx="21" fill="#fff"/>
+    <circle cx="42" cy="399" r="10" fill="#E1F3EA"/>
+    <path d="M37 399 l4 4 l8 -8" stroke="#0F7A4F" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="60" y="404" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="13" fill="#12151A">5-30 min</text>
+  </g>
+  <g filter="url(#chipShadow)">
+    <rect x="384" y="60" width="164" height="42" rx="21" fill="#fff"/>
+    <circle cx="408" cy="81" r="10" fill="#E5EAFB"/>
+    <path d="M408 75 v6 M408 85 h.01" stroke="#1B3FCC" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <text x="426" y="86" font-family="Plus Jakarta Sans, sans-serif" font-weight="700" font-size="13" fill="#12151A">Tu moneda local</text>
+  </g>
+
+  <!-- Sobre de mail flotante, abajo a la derecha: refuerza "entrega por mail" -->
+  <g transform="translate(432 424)" filter="url(#chipShadow)">
+    <rect x="0" y="0" width="76" height="54" rx="10" fill="#fff"/>
+    <path d="M6 10 L38 32 L70 10" stroke="#1B3FCC" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="6" y="10" width="64" height="36" rx="5" fill="none" stroke="#1B3FCC" stroke-opacity=".55" stroke-width="2.2"/>
+  </g>
+</svg>

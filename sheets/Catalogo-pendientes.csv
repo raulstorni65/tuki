@@ -1,0 +1,11 @@
+Clave,Marca,Pais,Region_Code,Denominaciones,Imagen,Entrega,Stock,Estado,Orden_Subida,URL_Publicada,Motivo
+disney-plus|PE,Disney+,Perú,PE,38|34|1|10;75|68|1|20;190|170|0|50,/img/cards/disney-plus-pe.webp,5 a 30 minutos,si,pendiente,4,,
+prime-video|PE,Prime Video,Perú,PE,38|34|1|10;75|68|1|20;190|170|1|50,/img/cards/prime-video-pe.webp,5 a 30 minutos,si,pendiente,5,,
+google-play|AR,Google Play,Argentina,AR,17000|15300|1|10;34000|30600|1|20;85000|76500|1|50,/img/cards/google-play-ar.webp,5 a 30 minutos,si,pendiente,6,,
+netflix|AR,Netflix,Argentina,AR,17000|15300|1|10;34000|30600|1|20;85000|76500|1|50,/img/cards/netflix-ar.webp,5 a 30 minutos,si,pendiente,7,,
+spotify|AR,Spotify,Argentina,AR,17000|15300|1|10;34000|30600|1|20;85000|76500|0|50,/img/cards/spotify-ar.webp,5 a 30 minutos,si,pendiente,8,,
+disney-plus|AR,Disney+,Argentina,AR,17000|15300|1|10;34000|30600|1|20;85000|76500|1|50,/img/cards/disney-plus-ar.webp,5 a 30 minutos,si,pendiente,9,,
+prime-video|AR,Prime Video,Argentina,AR,17000|15300|1|10;34000|30600|1|20;85000|76500|1|50,/img/cards/prime-video-ar.webp,5 a 30 minutos,si,pendiente,10,,
+netflix|CL,Netflix,Chile,CL,10000|9240|1|10;20000|18480|1|20;50000|46200|1|50,/img/cards/netflix-cl.webp,5 a 30 minutos,si,pendiente,11,,
+netflix|CO,Netflix,Colombia,CO,35000|32450|1|10;70000|64900|1|20;180000|162250|1|50,/img/cards/netflix-co.webp,5 a 30 minutos,si,pendiente,12,,
+netflix|MX,Netflix,México,MX,190|175|1|10;380|349|1|20;950|873|1|50,/img/cards/netflix-mx.webp,5 a 30 minutos,si,pendiente,13,,

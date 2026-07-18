@@ -1,0 +1,24 @@
+Marca,Pais,Plan,Precio_Plan_Local,Fecha_Actualizacion
+Netflix,Argentina,Plan Básico,7199,2026-07-13
+Netflix,Argentina,Plan Estándar,11999,2026-07-13
+Netflix,Argentina,Plan Premium,17199,2026-07-13
+Netflix,Perú,Plan Básico,24.90,2026-07-13
+Netflix,Perú,Plan Estándar,34.90,2026-07-13
+Netflix,Perú,Plan Premium,44.90,2026-07-13
+Netflix,Chile,Plan Básico,5900,2026-07-13
+Netflix,Chile,Plan Estándar,9700,2026-07-13
+Netflix,Chile,Plan Premium,13400,2026-07-13
+Netflix,Colombia,Plan Básico,16900,2026-07-13
+Netflix,Colombia,Plan Estándar,26900,2026-07-13
+Netflix,Colombia,Plan Premium,38900,2026-07-13
+Netflix,México,Plan Básico,119,2026-07-13
+Netflix,México,Plan Estándar,219,2026-07-13
+Netflix,México,Plan Premium,299,2026-07-13
+Spotify,Argentina,Premium Individual,2999,2026-07-13
+Spotify,Perú,Premium Individual,16.90,2026-07-13
+Disney+,Argentina,Estándar,5999,2026-07-13
+Disney+,Argentina,Premium,8999,2026-07-13
+Disney+,Perú,Estándar,27.90,2026-07-13
+Disney+,Perú,Premium,37.90,2026-07-13
+Prime Video,Argentina,Prime Video,1699,2026-07-13
+Prime Video,Perú,Prime Video,9.90,2026-07-13

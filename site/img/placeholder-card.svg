@@ -1,0 +1,14 @@
+<svg viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Imagen de la gift card">
+  <rect width="640" height="400" rx="16" fill="#E4E7EC"/>
+  <rect x="40" y="60" width="560" height="280" rx="14" fill="#FFFFFF" stroke="#B9C0CA" stroke-width="1.5"/>
+  <rect x="40" y="188" width="560" height="4" fill="none"/>
+  <g stroke="#B9C0CA" stroke-width="2" stroke-dasharray="7 7">
+    <line x1="40" y1="190" x2="600" y2="190"/>
+  </g>
+  <circle cx="40" cy="190" r="12" fill="#E4E7EC" stroke="#B9C0CA" stroke-width="1.5"/>
+  <circle cx="600" cy="190" r="12" fill="#E4E7EC" stroke="#B9C0CA" stroke-width="1.5"/>
+  <rect x="72" y="96" width="120" height="20" rx="5" fill="#D2D7DE"/>
+  <rect x="72" y="250" width="220" height="16" rx="5" fill="#D2D7DE"/>
+  <rect x="72" y="278" width="150" height="14" rx="5" fill="#E4E7EC"/>
+  <text x="320" y="360" font-family="IBM Plex Mono, monospace" font-size="13" fill="#6B7280" text-anchor="middle">imagen del producto</text>
+</svg>
